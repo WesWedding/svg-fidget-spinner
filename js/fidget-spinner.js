@@ -1,6 +1,6 @@
 const Physics = require('./physics')
 const Renderer = require('./spinnerRender')
-const TweenLite = require('gsap').TweenLite;
+const Draggable = require('gsap/Draggable');
 
 var physicsState = {};
 
@@ -16,7 +16,23 @@ document.addEventListener('DOMContentLoaded', function() {
 
   loop();
   Renderer.run();
+
+  Draggable.create('svg #Page-1', {type: "rotation", throwProps: true, onDragStart: spinnerDragStart, onDragEnd: spinnerDragEnd, onDrag: onSpinnerDrag})[0];
+
 });
+
+function spinnerDragStart(e) {
+  Physics.stopSpinning();
+}
+
+function spinnerDragEnd() {
+  Physics.setAngle(this.rotation * Math.PI / 180);
+  this.target.style.transform = null;
+}
+
+function onSpinnerDrag() {
+  Physics.setAngle(this.rotation * Math.PI / 180);
+}
 
 function loop(time) {
   window.requestAnimationFrame(loop);

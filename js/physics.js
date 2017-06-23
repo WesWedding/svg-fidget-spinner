@@ -12,7 +12,7 @@ var Engine = Matter.Engine,
 
 // create two boxes and a ground
 var circle = Bodies.circle(400, 200, 200, {}, 10);
-Matter.Body.setAngularVelocity(circle, 0.4);
+Matter.Body.setAngularVelocity(circle, 0);
 
 const SpinnerPhysics = {
   init: function(showDebug) {
@@ -40,6 +40,9 @@ const SpinnerPhysics = {
       Render.run(debugRenderer);
     }
   },
+  setAngle: function(radians) {
+    circle.angle = radians;
+  },
   getStats: function() {
     return {
       angV: circle.angularVelocity,
@@ -48,6 +51,9 @@ const SpinnerPhysics = {
   },
   bump: function() {
     Matter.Body.setAngularVelocity(circle, circle.angularVelocity + 0.1);
+  },
+  stopSpinning: function() {
+    Matter.Body.setAngularVelocity(circle, 0);
   }
 }
 
