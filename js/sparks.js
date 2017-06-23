@@ -10,6 +10,8 @@ var starburst,
 zigzagburst,
 circleburst;
 
+var timeline = new mojs.Timeline({ speed: TIMELINE_SPEED });
+
 const Sparks = {
   setup: function() {
     class Star extends mojs.CustomShape {
@@ -63,84 +65,8 @@ const Sparks = {
     });
   },
   playSparks: function() {
-    var sparks = new mojs.Timeline({ speed: TIMELINE_SPEED });
-    sparks.add( zigzagburst, circleburst, starburst ).play();
+    timeline.add( zigzagburst, circleburst, starburst ).play();
   }
 }
 
 module.exports = Sparks;
-
-//
-// var starburst = new mojs.Burst({
-//   radius: { 0: 400 },
-//   count: PARTICLE_COUNT,
-//   children: {
-//     shape: 'star',
-//     points: 20,
-//     fill: { 'yellow' : 'orange' },
-//     angle: { 0: 960 }, //spin
-//     radius: 20,
-//     duration: ANIM_DURATION,
-//     delay: 'stagger(rand(0,50))'
-//   }
-// });
-//
-//
-// var zigzagburst = new mojs.Burst({
-//   radius: { 0: 400 },
-//   count: PARTICLE_COUNT,
-//   children: {
-//     shape: 'zigzag',
-//     points: 20,
-//     fill: { 'magenta' : 'blue' },
-//     angle: { 0: 960 }, //spin
-//     radius: 20,
-//     duration: ANIM_DURATION,
-//     delay: 'stagger(rand(0,40))'
-//   }
-// });
-//
-//
-// var circleburst = new mojs.Burst({
-//   radius: { 50: 400 },
-//   count: PARTICLE_COUNT,
-//   children: {
-//     shape: ['rect', 'circle'],
-//     fill: [ 'red', 'orange', 'yellow' ],
-//     angle: { 960: 0 }, //spin
-//     radius: 'rand(8, 14)',
-//     duration: ANIM_DURATION,
-//     delay: 'stagger( rand(0, 40))'
-//   }
-// });
-
-// var smokeburstLeft = new mojs.Burst({
-//   radius: { 50: 600 },
-//   opacity: { 0.6 : 0 },
-//   count: SMOKE_COUNT,
-//   degree: -10,
-//   children: {
-//     shape: 'circle',
-//     fill: 'grey',
-//     radius: 'rand(10, 20)',
-//     duration: SMOKE_DURATION,
-//     delay: 'stagger(rand(0, 100))'
-//   }
-// })
-//
-// var smokeburstRight = new mojs.Burst({
-//   radius: { 50: 600 },
-//   opacity: { 0.6 : 0 },
-//   count: SMOKE_COUNT,
-//   degree: 10,
-//   children: {
-//     shape: 'circle',
-//     fill: 'grey',
-//     radius: 'rand(10, 20)',
-//     duration: SMOKE_DURATION,
-//     delay: 'stagger(rand(0, 100))'
-//   }
-// })
-//
-// smokeburstLeft.play()
-// smokeburstRight.play()
