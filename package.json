@@ -24,7 +24,11 @@
   },
   "homepage": "https://github.com/stickywes/svg-fidget-spinner#readme",
   "devDependencies": {
-    "webpack": "^3.0.0",
+    "webpack": "^2.2.0",
     "webpack-dev-server": "^2.5.0"
+  },
+  "dependencies": {
+    "gsap": "^1.19.1",
+    "matter-js": "^0.12.0"
   }
 }
