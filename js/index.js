@@ -1,3 +1,3 @@
 // Code will go here, someday!  Someday I will grow up to be an adult softwares!
 
-require('./js/figdet-spinner')
+require('./fidget-spinner')

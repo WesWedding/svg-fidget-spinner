@@ -15,6 +15,13 @@ const SpinnerPhysics = {
     },
     addAngularV: function (amount) {
       angularVelocity += amount;
+    },
+    getStats: function () {
+      return {
+        angV: angularVelocity,
+        mass: mass,
+        armLength: armLength
+      }
     }
 }
 
