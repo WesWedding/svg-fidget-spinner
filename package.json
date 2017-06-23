@@ -1,0 +1,24 @@
+{
+  "name": "svg-fidget-spinner",
+  "version": "1.0.0",
+  "description": "Wanna do whatever it is you're supposed to do with those trendy new fidget spinners?  Well, do it virtually!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stickywes/svg-fidget-spinner.git"
+  },
+  "keywords": [
+    "fidget",
+    "spinner",
+    "svg"
+  ],
+  "author": "Weston Wedding",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stickywes/svg-fidget-spinner/issues"
+  },
+  "homepage": "https://github.com/stickywes/svg-fidget-spinner#readme"
+}
